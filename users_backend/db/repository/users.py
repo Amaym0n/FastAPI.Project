@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 
 from core.hashing import Hasher
 from db.models.users import Users
-from schemas.users import UserCreate
+from schemas.users import UserCreate, UserGetInfo
 
 
 class UserMethods:
@@ -17,3 +17,7 @@ class UserMethods:
         db.commit()
         db.refresh(instance=user)
         return user
+
+    @staticmethod
+    def get_user_info(user_id: int, db: Session):
+        return db.query(Users).get(ident=user_id)
