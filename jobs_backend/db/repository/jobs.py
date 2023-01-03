@@ -8,8 +8,8 @@ class JobMethods:
     """ Class with methods to update/delete/create jobs """
 
     @staticmethod
-    def create_new_job(job: JobCreate, owner_id: int, db: Session):
-        job = Jobs(**job.dict(), owner_id=owner_id)
+    def create_new_job(job: JobCreate, db: Session):
+        job = Jobs(**job.dict())
         db.add(instance=job)
         db.commit()
         db.refresh(instance=job)
