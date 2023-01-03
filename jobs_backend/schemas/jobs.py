@@ -11,7 +11,6 @@ class JobBase(BaseModel):
     company_url: Optional[str] = None
     location: str = "Remote"
     description: Optional[str] = None
-    date_posted: Optional[str] = datetime.now().date()
 
 
 class JobCreate(JobBase):
@@ -27,7 +26,6 @@ class ShowJob(JobBase):
     company_url: Optional[str]
     description: str
     location: str
-    date_posted: date
 
     class Config:
         orm_mode = True
