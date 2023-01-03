@@ -14,3 +14,7 @@ class JobMethods:
         db.commit()
         db.refresh(instance=job)
         return job
+
+    @staticmethod
+    def get_job(job_id: int, db: Session):
+        return db.query(Jobs).get(ident=job_id)

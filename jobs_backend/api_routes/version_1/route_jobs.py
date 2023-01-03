@@ -12,3 +12,9 @@ router = APIRouter()
 def create_job(job: JobCreate, db: Session = Depends(dependency=get_db)):
     job = JobMethods.create_new_job(job=job, db=db)
     return job
+
+
+@router.get(path='/get{job_id}', response_model=ShowJob)
+def get_job(job_id: int, db: Session = Depends(dependency=get_db)):
+    job = JobMethods.get_job(job_id=job_id, db=db)
+    return job
