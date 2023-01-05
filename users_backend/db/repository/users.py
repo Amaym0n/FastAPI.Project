@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 
 from core.hashing import Hasher
 from db.models.users import Users
-from schemas.users import UserCreate, UserGetInfo
+from schemas.users import UserCreate
 
 
 class UserMethods:

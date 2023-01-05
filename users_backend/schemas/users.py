@@ -9,11 +9,6 @@ class UserCreate(BaseModel):
     email: EmailStr
 
 
-class UserGetInfo(BaseModel):
-    """ Pydantic class to check user data for get request"""
-    id: int
-
-
 class ShowUser(BaseModel):
     """ Response for create_user root """
     id: int
