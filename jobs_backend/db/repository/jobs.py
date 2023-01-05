@@ -16,5 +16,5 @@ class JobMethods:
         return job
 
     @staticmethod
-    def get_job(job_id: int, db: Session):
+    def read_job(job_id: int, db: Session):
         return db.query(Jobs).get(ident=job_id)

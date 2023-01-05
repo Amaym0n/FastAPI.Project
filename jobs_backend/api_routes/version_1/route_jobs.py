@@ -14,7 +14,7 @@ def create_job(job: JobCreate, db: Session = Depends(dependency=get_db)):
     return job
 
 
-@router.get(path='/get{job_id}', response_model=ShowJob)
-def get_job(job_id: int, db: Session = Depends(dependency=get_db)):
-    job = JobMethods.get_job(job_id=job_id, db=db)
+@router.get(path='/read{job_id}', response_model=ShowJob)
+def read_job(job_id: int, db: Session = Depends(dependency=get_db)):
+    job = JobMethods.read_job(job_id=job_id, db=db)
     return job
